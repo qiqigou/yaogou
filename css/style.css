@@ -82,3 +82,39 @@ button {
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
 }
+
+@media (max-width: 480px) {
+  .card {
+    padding: 20px 16px;
+    border-radius: 20px;
+    max-width: 95vw;
+  }
+
+  #dogImage {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 14px 18px;
+  }
+
+  #yesBtn, #noBtn {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
