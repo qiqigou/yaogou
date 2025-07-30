@@ -2,7 +2,7 @@ const gifs = [
   "img/g1.gif", "img/g2.gif", "img/g3.gif", "img/g4.gif", "img/g5.gif",
   "img/g6.gif", "img/g7.gif", "img/g8.gif", "img/g9.gif", "img/g10.gif", "img/g11.gif"
 ];
-const happyGif = "img/gs.gif";
+const happyGif = "img/gh.gif";
 const angryGif = "img/gb.gif";
 
 const subs = [
@@ -69,7 +69,7 @@ noBtn.onclick = () => {
 yesBtn.onclick = () => {
   dogImage.src = happyGif;
   mainText.textContent = "我们和好了～";
-  subText.textContent = "小狗也高兴地蹦起来啦！🐶💖";
+  subText.textContent = "果然瑶瑶最好啦！🐶💖";
   yesBtn.textContent = "耶耶耶🎉";
   yesBtn.disabled = true;
   noBtn.style.display = "none";

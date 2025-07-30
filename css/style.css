@@ -16,6 +16,7 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   padding: 40px 30px;
   max-width: 420px;
+  width: 100%;
   text-align: center;
   animation: fadeIn 1s ease;
 }
@@ -38,8 +39,9 @@ p {
 }
 
 #dogImage {
-  width: 300px;
-  height: 220px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -83,6 +85,7 @@ button {
   100% { transform: translateX(0); }
 }
 
+/* 手机端优化 */
 @media (max-width: 480px) {
   .card {
     padding: 20px 16px;
@@ -103,8 +106,8 @@ button {
     font-size: 0.95rem;
   }
 
+  /* 保持左右排列，不添加 flex-direction: column */
   .buttons {
-    flex-direction: column;
     gap: 10px;
   }
 
@@ -115,6 +118,7 @@ button {
 
   #yesBtn, #noBtn {
     flex: 1 1 auto;
-    width: 100%;
+    width: auto;
   }
 }
+
