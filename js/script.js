@@ -20,6 +20,8 @@ const subs = [
 ];
 
 let currentIndex = 0;
+let clickCount = 0;
+
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const dogImage = document.getElementById("dogImage");
@@ -28,29 +30,29 @@ const subText = document.getElementById("subText");
 
 noBtn.onclick = () => {
   currentIndex++;
+  clickCount++;
 
+  // 更换动图与文字
   dogImage.src = gifs[currentIndex % gifs.length];
   subText.textContent = subs[currentIndex % subs.length];
 
+  // 变大好吧按钮，缩小不要按钮
   let yesSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
   let noSize = parseFloat(window.getComputedStyle(noBtn).fontSize);
-
   yesSize = Math.min(yesSize * 1.1, 32);
   noSize = Math.max(noSize * 0.9, 5);
-
   yesBtn.style.fontSize = yesSize + "px";
   noBtn.style.fontSize = noSize + "px";
 
   let yesFlex = parseFloat(yesBtn.style.flex || 1);
   let noFlex = parseFloat(noBtn.style.flex || 1);
-
   yesFlex = Math.min(yesFlex * 1.1, 8.0);
   noFlex = Math.max(noFlex * 0.9, 0.1);
-
   yesBtn.style.flex = yesFlex.toFixed(2);
   noBtn.style.flex = noFlex.toFixed(2);
 
-  if (noSize <= 5.01) {
+  // 如果点击超过 10 次，进入爆发
+  if (clickCount >= 10) {
     dogImage.src = angryGif;
     mainText.textContent = "垃圾瑶瑶 tui！";
     subText.textContent = "大胆何其大胆，tui你嘴里😠";
